@@ -1,0 +1,9 @@
+{
+    "reweites": [
+        {"source":"/_expo/*","destination": "/_expo/index.html"},
+        {"source":"/*","destination":"/index.html"}
+    ],
+    "cleanUrls":true,
+    "tralilingSlash": false,
+    "outputDirectory":"dist"
+}

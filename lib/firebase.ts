@@ -1,24 +1,24 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { initializeApp} from "firebase/app";
 
 import {getAuth} from "firebase/auth"; 
 import {getFirestore} from "firebase/firestore"; 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyA25hdIsi_McJPUjNapP4OTlWnl1kw9V1g",
-    authDomain: "projeto01-26141.firebaseapp.com",
-    databaseDomain: "https://projeto01-26141.firebaseio.com", //endereço do banco
-    projectId: "projeto01-26141",
-    storageBucket: "projeto01-26141.firebasestorage.app",
-    messagingSenderId: "613458197628",
-    appId: "1:613458197628:web:9f1995157d4e7a6a059df9",
-    measurementId: "G-84XKHTCNFR"
+    apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    databaseDomain: process.env.EXPO_PUBLIC_FIREBASE_DATA_BASE_URL, 
+    projectId: process.env.EXPO_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER,
+    appId: process.env.EXPO_PUBLIC_FIREBASE_APP_ID ,
+    measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp (firebaseConfig);
 
 export const auth = getAuth(app); 
 export const db = getFirestore(app); 
 
 export default app; 
+
+
